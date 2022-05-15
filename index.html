@@ -9,12 +9,24 @@
   </head>
   <body>
     <header>
-      <div class="header__name">
-        <p>
-          Ivana <br />
-          Eliasova
-        </p>
+      <div class="picture">
+        <picture>
+          <source
+            srcset="images/name.svg"
+            media="(min-width: 700px)"
+            class="header__name"
+          />
+
+          <source
+            srcset="images/name_mobile.svg"
+            media="(max-width: 699px)"
+            class="header__name_mobile"
+          />
+
+          <img src="images/name.svg" alt="logo" class="header__name" />
+        </picture>
       </div>
+
       <nav>
         <a href="#home">.home</a>
         <a href="#about">.about</a>
@@ -26,14 +38,19 @@
     <div id="home" class="home-section">
       <h1>Hi! I am Ivana, a frontend developer in the making.</h1>
     </div>
+
     <div id="about" class="about-section">
       <img
-        src="https://doodleipsum.com/450x450/avatar-2?i=6c54c7c35a2190dca17dac7ba729c061"
+        src="images/medium.png"
         alt="my-picture"
-        width="350px"
-        height="350px"
+        srcset="images/small.png 250,
+              images/medium.png 300,
+              images/big.png 350"
+        width="300px"
+        height="300px"
         class="about-section__img"
       />
+
       <div class="about-section__text">
         <p>
           This site is a work-in-progress, where I'll try to showcase my journey
@@ -59,152 +76,161 @@
       <p class="projects-section__text">
         This is a brief overview of the projects I've been working on:
       </p>
-      <div class="projects-section__project-card project-card">
-        <img
-          src="https://doodleipsum.com/300x225/outline?&n=1"
-          alt="project-picture"
-          width="300px"
-          height="225px"
-          class="project-card__img"
-        />
-        <div class="project-card__text">
-          <p>Project</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
-            voluptates?
-          </p>
+      <div class="projects-section__project-cards">
+        <div class="projects-section__project-card project-card">
+          <img
+            src="https://doodleipsum.com/300x225/outline?&n=1"
+            alt="project-picture"
+            width="300px"
+            height="225px"
+            class="project-card__img"
+          />
+          <div class="project-card__text">
+            <p>Project</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+              voluptates?
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="projects-section__project-card project-card">
-        <img
-          src="https://doodleipsum.com/300x225/outline?&n=2"
-          alt="project-picture"
-          width="300px"
-          height="225px"
-          class="project-card__img"
-        />
-        <div class="project-card__text">
-          <p>Project</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
-            voluptates?
-          </p>
+        <div class="projects-section__project-card project-card">
+          <img
+            src="https://doodleipsum.com/300x225/outline?&n=2"
+            alt="project-picture"
+            width="300px"
+            height="225px"
+            class="project-card__img"
+          />
+          <div class="project-card__text">
+            <p>Project</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+              voluptates?
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="projects-section__project-card project-card">
-        <img
-          src="https://doodleipsum.com/300x225/outline?&n=3"
-          alt="project-picture"
-          width="300px"
-          height="225px"
-          class="project-card__img"
-        />
-        <div class="project-card__text">
-          <p>Project</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
-            voluptates?
-          </p>
+        <div class="projects-section__project-card project-card">
+          <img
+            src="https://doodleipsum.com/300x225/outline?&n=3"
+            alt="project-picture"
+            width="300px"
+            height="225px"
+            class="project-card__img"
+          />
+          <div class="project-card__text">
+            <p>Project</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+              voluptates?
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="projects-section__project-card project-card">
-        <img
-          src="https://doodleipsum.com/300x225/outline?&n=4"
-          alt="project-picture"
-          width="300px"
-          height="225px"
-          class="project-card__img"
-        />
-        <div class="project-card__text">
-          <p>Project</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
-            voluptates?
-          </p>
+        <div class="projects-section__project-card project-card">
+          <img
+            src="https://doodleipsum.com/300x225/outline?&n=4"
+            alt="project-picture"
+            width="300px"
+            height="225px"
+            class="project-card__img"
+          />
+          <div class="project-card__text">
+            <p>Project</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+              voluptates?
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="projects-section__project-card project-card">
-        <img
-          src="https://doodleipsum.com/300x225/outline?&n=5"
-          alt="project-picture"
-          width="300px"
-          height="225px"
-          class="project-card__img"
-        />
-        <div class="project-card__text">
-          <p>Project</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
-            voluptates?
-          </p>
+        <div class="projects-section__project-card project-card">
+          <img
+            src="https://doodleipsum.com/300x225/outline?&n=5"
+            alt="project-picture"
+            width="300px"
+            height="225px"
+            class="project-card__img"
+          />
+          <div class="project-card__text">
+            <p>Project</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+              voluptates?
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="projects-section__project-card project-card">
-        <img
-          src="https://doodleipsum.com/300x225/outline?&n=6"
-          alt="project-picture"
-          width="300px"
-          height="225px"
-          class="project-card__img"
-        />
-        <div class="project-card__text">
-          <p>Project</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
-            voluptates?
-          </p>
+        <div class="projects-section__project-card project-card">
+          <img
+            src="https://doodleipsum.com/300x225/outline?&n=6"
+            alt="project-picture"
+            width="300px"
+            height="225px"
+            class="project-card__img"
+          />
+          <div class="project-card__text">
+            <p>Project</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+              voluptates?
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="projects-section__project-card project-card">
-        <img
-          src="https://doodleipsum.com/300x225/outline?&n=7"
-          altalt="project-picture"
-          width="300px"
-          height="225px"
-          class="project-card__img"
-        />
-        <div class="project-card__text">
-          <p>Project</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
-            voluptates?
-          </p>
+        <div class="projects-section__project-card project-card">
+          <img
+            src="https://doodleipsum.com/300x225/outline?&n=7"
+            altalt="project-picture"
+            width="300px"
+            height="225px"
+            class="project-card__img"
+          />
+          <div class="project-card__text">
+            <p>Project</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+              voluptates?
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="projects-section__project-card project-card">
-        <img
-          src="https://doodleipsum.com/300x225/outline?&n=8"
-          altalt="project-picture"
-          width="300px"
-          height="225px"
-          class="project-card__img"
-        />
-        <div class="project-card__text">
-          <p>Project</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
-            voluptates?
-          </p>
+        <div class="projects-section__project-card project-card">
+          <img
+            src="https://doodleipsum.com/300x225/outline?&n=8"
+            altalt="project-picture"
+            width="300px"
+            height="225px"
+            class="project-card__img"
+          />
+          <div class="project-card__text">
+            <p>Project</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+              voluptates?
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="projects-section__project-card project-card">
-        <img
-          src="https://doodleipsum.com/300x225/outline?&n=9"
-          altalt="project-picture"
-          width="300px"
-          height="225px"
-          class="project-card__img"
-        />
-        <div class="project-card__text">
-          <p>Project</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
-            voluptates?
-          </p>
+        <div class="projects-section__project-card project-card">
+          <img
+            src="https://doodleipsum.com/300x225/outline?&n=9"
+            altalt="project-picture"
+            width="300px"
+            height="225px"
+            class="project-card__img"
+          />
+          <div class="project-card__text">
+            <p>Project</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+              voluptates?
+            </p>
+          </div>
         </div>
       </div>
     </div>
     <div id="contact" class="contact-section">
+      <img
+        src="images/bracket-left.svg"
+        class="contact-section__bracket-img--left"
+        alt="bracket-left"
+        width="366px"
+        height="277px"
+      />
       <p>
         Find me on
         <a href="https://www.linkedin.com/in/ivana-elia%C5%A1ov%C3%A1-3595b5b6/"
@@ -213,6 +239,13 @@
         or say hello at
         <a href="mailto:sisakovaivana@gmail.com">sisakovaivana@gmail.com</a>
       </p>
+      <img
+        src="images/bracket-right.svg"
+        class="contact-section__bracket-img--right"
+        alt="bracket-right"
+        width="366px"
+        height="277px"
+      />
     </div>
 
     <footer><p>© 2022, Ivana Eliašová</p></footer>
