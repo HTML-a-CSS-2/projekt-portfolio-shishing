@@ -1,0 +1,140 @@
+/* ahoj, ako som písala už na Slacku, mám problém dostať do môjho projektu modifikátory, mám pocit,
+že ich tam nemám kde nacpať, takže uvítam návrhy, ako sa s tým vysporiadať */
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  width: 1090px;
+  margin: 0 auto;
+  background-color: #f8f5f2;
+  font-family: monospace;
+  font-size: 1rem;
+  color: #222525;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 1090px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #f8f5f2;
+  border-bottom: 1px dashed #f45d48;
+}
+
+.header__name {
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0 10px;
+  /*margin: 0 -10px;*/
+  text-decoration: none;
+  color: #222525;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+nav a:hover,
+nav a:focus {
+  box-shadow: inset 100px 0 0 0 #f45d48;
+  color: #f8f5f2;
+}
+
+.home-section {
+  min-height: 100vh;
+  margin-top: 200px;
+}
+
+h1 {
+  padding: 300px 50px;
+  font-size: 5rem;
+  text-align: center;
+  color: #f45d48;
+}
+
+.about-section {
+  min-height: 100vh;
+  margin-top: 80px;
+  padding-top: 150px;
+}
+
+.about-section__img {
+  float: left;
+  margin-top: 135px;
+}
+
+.about-section__text {
+  margin-top: 220px;
+  margin-left: 400px;
+}
+
+.about-section__text--smaller-citation {
+  font-size: 0.7rem;
+  margin-top: 120px;
+}
+
+.about-section__text--link {
+  text-decoration: none;
+  color: #f45d48;
+  font-weight: 600;
+}
+
+.about-section__text--link:hover,
+.about-section__text--link:focus {
+  text-decoration: underline;
+}
+
+.projects-section {
+  padding-top: 200px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #078080;
+  margin: 15px;
+  border-radius: 10px;
+}
+
+.contact-section {
+  padding-top: 200px;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.contact-section a {
+  text-decoration: none;
+  color: #078080;
+}
+
+footer {
+  text-align: center;
+  border-top: 1px dashed #f45d48;
+  color: #f45d48;
+  font-size: 0.8rem;
+}
