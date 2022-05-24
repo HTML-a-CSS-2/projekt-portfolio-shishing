@@ -1,5 +1,30 @@
-/* ahoj, ako som písala už na Slacku, mám problém dostať do môjho projektu modifikátory, mám pocit,
-že ich tam nemám kde nacpať, takže uvítam návrhy, ako sa s tým vysporiadať */
+/*  Dotazy a problémy :)
+
+
+- mala som dosť problém s header, pretože cez dev tools sa mi stále ukazoval, že má oveľa väčšiu šírku než body
+ a nijak som to nevedela nastaviť, až sa to zrazu začalo zobrazovať správne – takže teraz vôbec neviem, 
+ či bol problém v konzole a ja to mám urobené správne, alebo je to stále blbo – prosím o kontrolu. 
+ Pôvodne som si teda myslela, že mi tam robí nejaké problémy to, že som si napevno na desktop verzii nastavila šírku body 
+ a že header je fixed – neviem.
+
+-problém s 100vh – tie sections sú až príliš dlhé, rozhodne dlhšie než výška okna obrazovky – 
+predstavovala som si, že proste každá tá časť sa presne vtesná na výšku danej obrazovky a 
+ďalšia section začne hneď pod ňou, ale takto mi to evidentne nefunguje
+
+- keď kliknem v menu na jednotlivé sections, časť ich zostane skrytá pod menu, 
+ktoré je fixné. Viem, že by sa to malo riešiť marginom, ale nech im dám akykoľvek veľký margin, 
+tak pri zväčšení obrazovky sa mi vždy zväčší aj menu (môže to byť tým, že písmo je v rem a tomu sa tá veľkosť prispôsobuje?) 
+a tým pádom je nastavený margin nedostatočný – dá sa výška marginu urobiť tiež nejak responzívne? 
+Navyše tým marginom na každej section potom strašne naťahujem celú stránku a pri scrollovaní tam je 
+strašne veľa prázdneho miesta
+
+- obrázok v about sekcii, ktorý tam je ako srcset, týmto spôsobom nefunguje – 
+stále je tam ten medium, ktorý je tam ako src / fallback
+
+- neviem, ako nastavi svg obrázky, ktoré tam mám ako curly brackets na záver, 
+aby boli viac menej stále rovnako veľké, respektíve aby sa do určitej miery zmenšovali, 
+ale neboli menšie ako text medzi nimi, ako je to teraz
+*/
 
 html {
   -webkit-box-sizing: border-box;
@@ -14,7 +39,7 @@ html {
 }
 
 body {
-  width: 1090px;
+  max-width: 1090px;
   margin: 0 auto;
   background-color: #f8f5f2;
   font-family: monospace;
@@ -36,7 +61,7 @@ header {
 }
 
 .header__name {
-  padding: 10px;
+  padding: 10px 7px;
 }
 
 nav {
@@ -57,7 +82,7 @@ nav a {
 
 nav a:hover,
 nav a:focus {
-  box-shadow: inset 100px 0 0 0 #f45d48;
+  box-shadow: inset 120px 0 0 0 #f45d48;
   color: #f8f5f2;
 }
 
@@ -66,6 +91,7 @@ nav a:focus {
 .projects-section,
 .contact-section {
   padding-left: 20px;
+  padding-right: 20px;
 }
 
 .home-section {
@@ -125,13 +151,21 @@ h1 {
 .project-card {
   display: flex;
   flex-direction: column;
-  width: 30%;
   justify-content: center;
   text-align: center;
   border: 1px solid #078080;
-  margin: 15px;
-  margin-left: 0;
   border-radius: 10px;
+}
+
+.projects-section__project-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(min-content, 320px));
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 30px;
+  grid-auto-rows: minmax(200px, auto);
 }
 
 .contact-section {
@@ -139,6 +173,9 @@ h1 {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 100px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .contact-section a {
@@ -146,9 +183,178 @@ h1 {
   color: #078080;
 }
 
+.contact-section a:hover {
+  border-bottom: 2px solid #078080;
+}
+
+.contact-section img {
+  width: 100%;
+  /*height: auto;*/
+  min-width: 0;
+}
+
+.contact-section p {
+  align-self: center;
+}
+
 footer {
   text-align: center;
   border-top: 1px dashed #f45d48;
   color: #f45d48;
   font-size: 0.8rem;
+}
+
+/*************************************** TABLET **********************************/
+
+@media screen and (max-width: 1090px) {
+  body {
+    width: 100%;
+  }
+
+  header {
+    width: 100%;
+    /*margin-left: 20px;
+    margin-right: 20px;*/
+    border-bottom: 1px dashed #f45d48;
+  }
+
+  .about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-section__img {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .about-section__text {
+    margin-left: 0;
+    font-size: 0.8rem;
+  }
+
+  .about-section__text--smaller-citation {
+    margin-top: 150px;
+  }
+
+  .projects-section__text {
+    text-align: center;
+  }
+
+  .projects-section__project-cards {
+    grid-template-columns: repeat(2, minmax(min-content, 330px));
+    justify-content: space-evenly;
+  }
+}
+
+/***********************   MOBIL   ******************************************/
+
+@media screen and (max-width: 699px) {
+  body {
+    font-size: 1.1rem;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    width: 100%;
+    border-bottom: none;
+    margin: 0;
+  }
+  header .picture {
+    /*width: 100%;*/
+    border-bottom: 1px dashed #f45d48;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  header picture {
+    margin: 20px auto;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px dashed #f45d48;
+    margin-top: 2px;
+  }
+
+  nav a {
+    padding: 10px;
+  }
+
+  nav a:last-child {
+    margin-bottom: 2px;
+  }
+
+  .home-section,
+  .about-section,
+  .projects-section,
+  .contact-section {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .home-section {
+    height: 100vh;
+    margin-top: 300px;
+  }
+
+  h1 {
+    padding: 100px 10px;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+    margin-top: 200px;
+  }
+
+  .about-section__img {
+    margin-top: 0;
+  }
+
+  .about-section__text {
+    margin: 0;
+  }
+
+  .about-section p {
+    margin-top: 50px;
+  }
+
+  .about-section__text--smaller-citation {
+    margin-top: 200px; /*tento margin sa vobec neprepisuje a neviem prečo*/
+    text-align: center;
+  }
+
+  .projects-section__project-cards {
+    grid-template-columns: minmax(min-content, 300px);
+    row-gap: 20px;
+    grid-auto-rows: minmax(200px, auto);
+    justify-content: center;
+  }
+
+  .contact-section {
+    font-size: 1rem;
+  }
+
+  footer {
+    text-align: center;
+    border-top: 1px dashed #f45d48;
+    color: #f45d48;
+    font-size: 0.6rem;
+  }
 }
